@@ -1,0 +1,218 @@
+# Also see:
+# https://fedoraproject.org/wiki/Starting_services_by_default
+
+disable systemd-timesyncd.service
+disable systemd-resolved.service
+
+# systemd
+enable remote-fs.target
+enable getty@tty1.service
+
+# System stuff
+enable sshd.service
+enable atd.*
+enable crond.*
+enable chronyd.service
+enable rpcbind.*
+enable NetworkManager.service
+enable NetworkManager-dispatcher.service
+enable ModemManager.service
+enable auditd.service
+enable restorecond.service
+enable bluetooth.*
+enable avahi-daemon.*
+enable cups.*
+
+# The various syslog implementations
+enable rsyslog.*
+enable syslog-ng.*
+enable sysklogd.*
+
+# Network facing
+enable firewalld.service
+enable xinetd.service
+enable ladvd.service
+
+# Virtualization driver specific daemons. Start by defalt at boot for VM
+# autostart, but shutdown after 2 mins and socket activated thereafter
+enable virtqemud.service
+
+# Compatibility with libvirtd sockets for old clients and expose TCP sockets
+enable virtproxyd.socket
+
+# Secondary drivers providing supporting functionality to main virtualization
+# drivers, socket activated only when required
+enable virtinterfaced.socket
+enable virtnetworkd.socket
+enable virtnodedevd.socket
+enable virtnwfilterd.socket
+enable virtsecretd.socket
+enable virtstoraged.socket
+
+# Storage
+enable multipathd.service
+enable libstoragemgmt.service
+enable lvm2-lvmpolld.socket
+enable lvm2-monitor.*
+enable lvm2-lvmetad.*
+enable dm-event.*
+enable dmraid-activation.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=855372
+enable mdmonitor.service
+enable mdmonitor-takeover.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=876237
+enable spice-vdagentd.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=885406
+enable qemu-guest-agent.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=928726
+enable dnf-makecache.timer
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=957135
+enable vmtoolsd.service
+
+# mcelog is a utility that collects and decodes Machine Check Exception data
+# on x86-32 and x86-64 systems.
+# https://bugzilla.redhat.com/show_bug.cgi?id=1302179
+enable mcelog.service
+
+#https://bugzilla.redhat.com/show_bug.cgi?id=995987
+enable kdump.service
+
+#https://bugzilla.redhat.com/show_bug.cgi?id=1009970
+enable tuned.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1215645
+enable unbound-anchor.timer
+
+# Enable SSSD Kerberos Credential Cache Server
+# https://bugzilla.redhat.com/show_bug.cgi?id=1558927
+enable sssd-kcm.socket
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1578833
+enable sssd.service
+
+# Hardware
+enable gpm.*
+enable gpsd.*
+enable irqbalance.service
+enable lm_sensors.service
+enable mcelog.*
+enable microcode.service
+enable smartd.service
+enable pcscd.socket
+enable rngd.service
+
+# Other stuff
+enable abrtd.service
+enable abrt-journal-core.service
+enable abrt-oops.service
+enable abrt-xorg.service
+enable abrt-vmcore.service
+enable lttng-sessiond.service
+enable ksm.service
+enable ksmtuned.service
+enable rootfs-resize.service
+enable sysstat.service
+enable uuidd.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1193616
+enable hypervfcopyd.service
+enable hypervkvpd.service
+enable hypervvssd.service
+
+# Desktop stuff
+enable accounts-daemon.service
+enable rtkit-daemon.service
+enable upower.service
+enable udisks2.service
+enable packagekit-offline-update.service
+enable PackageKit.service
+# https://bugzilla.redhat.com/show_bug.cgi?id=2011240
+enable power-profiles-daemon.service
+
+# Initial Setup reconfiguration service
+enable initial-setup-reconfiguration.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1312446
+enable opal-prd.service
+
+# virtlog.service is sometimes used by VMs started by libvirt.service
+# Enable virtlog.socket to have it socket activated
+# https://bugzilla.redhat.com/show_bug.cgi?id=1325503
+enable virtlogd.socket
+
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1271839
+enable rhsmcertd.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1359645
+enable brandbot.*
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1572550
+enable timedatex.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1578870
+enable selinux-autorelabel-mark.service
+enable rhel-configure.service
+enable rhel-dmesg.service
+
+# https://github.com/fedora-sysv/initscripts/commit/37109fdf9808
+enable nis-domainname.service
+enable import-state.service
+enable loadmodules.service
+enable readonly-root.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1630200
+# s390x specific services
+enable cpi.service
+enable device_cio_free.service
+
+# Enable the stratis daemon for managing stratis storage
+# https://bugzilla.redhat.com/show_bug.cgi?id=1632510
+enable stratisd.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=1817591
+enable mlocate-updatedb.timer
+
+# nvme auto connect
+# https://bugzilla.redhat.com/show_bug.cgi?id=1805466
+enable nvmefc-boot-connections.service
+
+# OSTree based systems need to remount /sysroot and
+# /var as rw via ostree-remount.service
+# ignored by non-OSTree based systems
+# https://bugzilla.redhat.com/show_bug.cgi?id=1848453
+enable ostree-remount.service
+
+# DBus needed by Anaconda
+enable dbus.socket
+enable dbus-broker.service
+
+# Enable iscsi service files
+# https://bugzilla.redhat.com/show_bug.cgi?id=1930458
+enable iscsi.service
+enable iscsid.socket
+enable iscsiuio.socket
+enable iscsi-onboot.service
+
+# Enable logrotate.timer
+# https://bugzilla.redhat.com/show_bug.cgi?id=1977865
+enable logrotate.timer 
+
+# Enable greenboot
+# https://bugzilla.redhat.com/show_bug.cgi?id=2005552
+enable greenboot-grub2-set-counter.service
+enable greenboot-grub2-set-success.service
+enable greenboot-healthcheck.service
+enable greenboot-rpm-ostree-grub2-check-fallback.service
+enable greenboot-status.service
+enable greenboot-task-runner.service
+enable redboot-auto-reboot.service
+enable redboot-task-runner.service
+
+# https://bugzilla.redhat.com/show_bug.cgi?id=2013299
+enable low-memory-monitor.service

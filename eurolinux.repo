@@ -1,0 +1,107 @@
+# EuroLinux 9 repos are publicly available in the open core model. Both
+# customers and free users get the same packages simultaneously, same license,
+# etc. If your system needs support, or you want to rebuild from external
+# sources (including creating a custom fork), contact the EuroLinux sales team
+# or partner.
+
+[certify-baseos]
+name = EuroLinux certify BaseOS
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-BaseOS/os
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[certify-appstream]
+name = EuroLinux certify AppStream
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-AppStream/os
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[certify-powertools]
+name = EuroLinux certify PowerTools
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-PowerTools/os
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[high-availability]
+name = EuroLinux High Availability
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/os
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+
+[resilient-storage]
+name = EuroLinux Resilient Storage
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/os
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+
+[certify-baseos-all]
+name = EuroLinux certify BaseOS ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-BaseOS/all
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[certify-appstream-all]
+name = EuroLinux certify AppStream ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-AppStream/all
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[certify-powertools-all]
+name = EuroLinux certify PowerTools ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-PowerTools/all
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[high-availability-all]
+name = EuroLinux High Availability ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/all
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[resilient-storage-all]
+name = EuroLinux Resilient Storage ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/all
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[certify-baseos-beta]
+name = EuroLinux certify BaseOS - Beta
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-BaseOS/os
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[certify-appstream-beta]
+name = EuroLinux certify AppStream - Beta
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-AppStream/os
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1
+
+[certify-powertools-beta]
+name = EuroLinux certify PowerTools - Beta
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-PowerTools/os
+enabled=0
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
+skip_if_unavailable=1

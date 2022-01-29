@@ -1,0 +1,76 @@
+END USER LICENSE AGREEMENT 
+
+EuroLinux 
+
+This software is based on Red Hat(c) Enterprise Linux freely available
+sources.
+ 
+Red Hat has no involvement with this work and will provide no support of any
+kind. If support is required please contact EuroLinux. 
+
+By using this software, user agrees to abide by rules set in license terms of
+packages constituting this distribution, or at least of those that the user is
+going to use. 
+
+
+No warranty of any kind is provided. 
+
+Please see each package for it's licensing. 
+
+This end user license agreement (EULA) governs the use of any of the versions
+of EuroLinux and any related updates, source code, appearance, structure and
+organization (the Programs), regardless of the delivery mechanism. 
+
+
+1.  License Grant.  Subject to the following terms, EuroLinux grants 
+    to you (User) a perpetual, license to the Programs 
+    pursuant to the GNU General Public License v.2.  The Programs are either a 
+    modular operating system or an application consisting of hundreds of 
+    software components.  With the exception of certain image files  the 
+    license agreement for each software component is located in the software 
+    component's source code and permits User to run, 
+    copy, modify, and redistribute (subject to certain obligations in some 
+    cases) the software component, in both source code and binary code forms. 
+    This EULA pertains solely to the Programs and does not limit User's rights 
+    under, or grant User rights that supersede, the license terms of any 
+    particular component. 
+
+2.  No Warranty. The Programs and the components are provided and licensed 
+    "as is” without warranty of any kind, expressed or implied, including 
+    the implied warranties of merchantability, non-infringement or fitness for 
+    a particular purpose. 
+ 
+3.  Limitation of Remedies and Liability. To the maximum extent permitted under 
+    applicable law, EuroLinux will not be liable to User for any 
+    incidental or consequential damages, including lost profits or lost 
+    savings arising out of the use or inability to use the Programs or any 
+    component, even if EuroLinux has been advised of the possibility 
+    of such damages.  In no event shall EuroLinux liability exceed 
+    the amount that User paid to EuroLinux under this EULA. 
+
+4.  Export Control.  As required by the laws of the United States and other 
+    countries, User represents and warrants that it: (a) understands that the 
+    Programs and their components may be subject to export controls under the 
+    U.S. Commerce Departments Export Administration Regulations (EAR); (b) is 
+    not located in a prohibited destination country under the EAR or 
+    U.S. sanctions regulations (currently Cuba, Iran, Iraq, North Korea, Sudan 
+    and Syria, subject to change as posted by the United States government); (c)
+    will not export, re-export, or transfer the Programs to any prohibited 
+    destination or persons or entities on the U.S. Bureau of Industry and 
+    Security Denied Parties List or Entity List, or the U.S. Office of Foreign 
+    Assets Control list of Specially Designated Nationals and Blocked Persons, 
+    or any similar lists maintained by other countries, without the necessary 
+    export license(s) or authorizations(s); (d) will not use or transfer the 
+    Programs for use in connection with any nuclear, chemical or biological 
+    weapons, missile technology, or military end-uses where prohibited by an 
+    applicable arms embargo, unless authorized by the relevant government agency 
+    by regulation or specific license; (e) understands and agrees that if it is 
+    in the United States and exports or transfers the Programs to eligible end 
+    users, it will, to the extent required by EAR Section 740.17(e), submit 
+    semi-annual reports to the Commerce Departments Bureau of Industry and 
+    Security, which include the name and address (including country) of each 
+    transferee; and (f) understands that countries including the United States 
+    may restrict the import, use, or export of encryption products (which may 
+    include the Programs and the components) and agrees that it shall be solely
+    responsible for compliance with any such import, use, or export 
+    restrictions.
