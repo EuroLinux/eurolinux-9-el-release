@@ -13,7 +13,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.1%{?dist}
+Release:        0.2%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -301,7 +301,7 @@ rm -rf %{buildroot}
 
 /etc/yum.repos.d/
 %config(noreplace) /etc/dnf/vars/*
-# FIXME
+# FIXME waiting for swid tag
 #/etc/swid/swidtags.d
 #%{_prefix}/lib/swidtag/%{swid_regid}
 #/etc/pki/swid/CA/%{swid_regid}
@@ -323,6 +323,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Sun Feb 27 2022 Alex Baranowski <alex@euro-linux.com>  - 9.0-0.2
+- Now el-release uses proper beta repos.
+
 * Sat Jan 29 2022 Alex Baranowski <alex@euro-linux.com> - 9.0-0.1
 - Initial Release for EuroLinux 9 beta
 - Sarajevo as Codename (Can change - Pool still in progress)

@@ -4,45 +4,48 @@
 # sources (including creating a custom fork), contact the EuroLinux sales team
 # or partner.
 
-[certify-baseos]
-name = EuroLinux certify BaseOS
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-BaseOS/os
+# Certify in the URL might be confusing - it is legacy name when we open
+# repositories for certification purposes.
+
+[certify-baseos-beta]
+name = EuroLinux Beta BaseOS
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-BaseOS/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-appstream]
-name = EuroLinux certify AppStream
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-AppStream/os
+[certify-appstream-beta]
+name = EuroLinux Beta AppStream
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-AppStream/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-powertools]
-name = EuroLinux certify PowerTools
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-PowerTools/os
+[certify-powertools-beta]
+name = EuroLinux Beta PowerTools
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-PowerTools/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[high-availability]
-name = EuroLinux High Availability
+[high-availability-beta]
+name = EuroLinux Beta Availability
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
-[resilient-storage]
-name = EuroLinux Resilient Storage
+[resilient-storage-beta]
+name = EuroLinux Beta Resilient Storage
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
-[certify-baseos-all]
+[certify-baseos-beta-all]
 name = EuroLinux certify BaseOS ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-BaseOS/all
 enabled=0
@@ -50,7 +53,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-appstream-all]
+[certify-appstream-beta-all]
 name = EuroLinux certify AppStream ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-AppStream/all
 enabled=0
@@ -58,7 +61,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-powertools-all]
+[certify-powertools-beta-all]
 name = EuroLinux certify PowerTools ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-PowerTools/all
 enabled=0
@@ -66,7 +69,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[high-availability-all]
+[high-availability-beta-all]
 name = EuroLinux High Availability ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/all
 enabled=0
@@ -74,33 +77,9 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[resilient-storage-all]
+[resilient-storage-beta-all]
 name = EuroLinux Resilient Storage ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/all
-enabled=0
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
-skip_if_unavailable=1
-
-[certify-baseos-beta]
-name = EuroLinux certify BaseOS - Beta
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-BaseOS/os
-enabled=0
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
-skip_if_unavailable=1
-
-[certify-appstream-beta]
-name = EuroLinux certify AppStream - Beta
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-AppStream/os
-enabled=0
-gpgcheck=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
-skip_if_unavailable=1
-
-[certify-powertools-beta]
-name = EuroLinux certify PowerTools - Beta
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-PowerTools/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
