@@ -13,7 +13,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.2%{?dist}
+Release:        0.3%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -323,6 +323,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Mar 08 2022 Tomasz Podsiadły <tp@euro-linux.com> - 9.0-0.3
+- Rebuild with proper vendor and maintainer
+
 * Sun Feb 27 2022 Alex Baranowski <alex@euro-linux.com>  - 9.0-0.2
 - Now el-release uses proper beta repos.
 
