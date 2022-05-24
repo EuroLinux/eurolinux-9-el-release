@@ -13,7 +13,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.2%{?dist}
+Release:        0.3%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -33,8 +33,6 @@ Obsoletes:      redhat-release-computenode
 Obsoletes:      redhat-release-eula
 Obsoletes:      redhat-release-everything
 Obsoletes:      redhat-release-server
-Obsoletes:      redhat-release-server
-Obsoletes:      redhat-release-workstation
 Obsoletes:      redhat-release-workstation
 Provides:       base-module(platform:el%{base_release_version})
 Provides:       centos-stream-release = %{version}
@@ -46,14 +44,10 @@ Provides:       redhat-release = %{base_release_version}
 Provides:       redhat-release = %{version}
 Provides:       redhat-release = %{version}-%{release}
 Provides:       redhat-release-client
-Provides:       redhat-release-client
-Provides:       redhat-release-computenode
 Provides:       redhat-release-computenode
 Provides:       redhat-release-eula
 Provides:       redhat-release-everything = %{version}
 Provides:       redhat-release-server
-Provides:       redhat-release-server
-Provides:       redhat-release-workstation
 Provides:       redhat-release-workstation
 # 9
 Provides:       system-release = %{base_release_version}
@@ -132,22 +126,22 @@ VERSION_ID="%{full_release_version}"
 PLATFORM_ID="platform:el%{base_release_version}"
 PRETTY_NAME="%{product_family} %{full_release_version}%{?beta: %{beta}} (%{release_name})"
 ANSI_COLOR="0;34"
+LOGO="fedora-logo-icon"
 CPE_NAME="cpe:/o:eurolinux:eurolinux:%{base_release_version}"
 HOME_URL="https://www.euro-linux.com/"
-BUG_REPORT_URL="https://github.com/EuroLinux/eurolinux-distro-bugs-and-rfc/"
 DOCUMENTATION_URL="https://docs.euro-linux.com"
+BUG_REPORT_URL="https://github.com/EuroLinux/eurolinux-distro-bugs-and-rfc/"
 # We keep it for build scripts only
 REDHAT_SUPPORT_PRODUCT="EuroLinux"
 REDHAT_SUPPORT_PRODUCT_VERSION="%{base_release_version}"
 EOF
-
 # create /etc/os-release symlink
 ln -s ../%{_prefix}/lib/os-release %{buildroot}/%{_sysconfdir}/os-release
 
 # create /etc/system/release-cpe
 echo "cpe:/o:eurolinux:eurolinux:%{base_release_version}" > %{buildroot}/etc/system-release-cpe
 
-# create /etc/issue and /etc/issue.net
+# create /etc/issue, /etc/issue.net and /etc/issue.d
 echo '\S' > %{buildroot}/etc/issue
 echo 'Kernel \r on an \m' >> %{buildroot}/etc/issue
 cp %{buildroot}/etc/issue %{buildroot}/etc/issue.net
@@ -167,10 +161,9 @@ cat > %{buildroot}%{_rpmmacrodir}/macros.dist << EOF
 %%centos_ver %{base_release_version}
 %%centos %{base_release_version}
 %%rhel %{base_release_version}
-%%dist .el%{base_release_version}
-%%el%{base_release_version} 1
-%%dist %%{!?distprefix0:%%{?distprefix}}%%{expand:%%{lua:for i=0,9999 do print("%%{?distprefix" .. i .."}") end}}%{dist}%%{?with_bootstrap:%{__bootstrap}}
 %%__bootstrap         ~bootstrap
+%%dist %%{!?distprefix0:%%{?distprefix}}%%{expand:%%{lua:for i=0,9999 do print("%%{?distprefix" .. i .."}") end}}%{dist}%%{?with_bootstrap:%{__bootstrap}}
+%%el%{base_release_version} 1
 EOF
 
 ### dist tag macros end
@@ -183,14 +176,18 @@ echo el-release > redhat-release.conf
 install -p -c -m 0644 el-release.conf %{buildroot}/etc/dnf/protected.d/
 rm -f el-release.conf
 
-# Create doc dir
-mkdir -p -m 755 %{buildroot}/%{_docdir}/el-release
-ln -s el-release %{buildroot}/%{_docdir}/redhat-release
-# make /usr/share/el-release symlink redhat-release
+
+# use unbranded datadir
 mkdir -p -m 755 %{buildroot}/%{_datadir}/el-release
 ln -s el-release %{buildroot}/%{_datadir}/redhat-release
-install -m 644 %{SOURCE200} %{buildroot}/%{_datadir}/el-release
-install -m 644 %{SOURCE201} %{buildroot}/%{_docdir}/el-release
+install -m 644 EULA %{buildroot}/%{_datadir}/redhat-release
+
+# Create doc dir
+mkdir -p -m 755 %{buildroot}/%{_docdir}/el-release
+# make /usr/share/el-release symlink redhat-release
+ln -s el-release %{buildroot}/%{_docdir}/redhat-release
+install -m 644 GPL %{buildroot}/%{_docdir}/el-release
+
 
 # copy systemd presets
 mkdir -p %{buildroot}/%{_prefix}/lib/systemd/system-preset/
@@ -299,7 +296,7 @@ rm -rf %{buildroot}
 %{_prefix}/lib/sysctl.d/50-redhat.conf
 %{_prefix}/lib/os-release
 
-/etc/yum.repos.d/
+%dir /etc/yum.repos.d
 %config(noreplace) /etc/dnf/vars/*
 # FIXME waiting for swid tag
 #/etc/swid/swidtags.d
@@ -323,6 +320,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue May 24 2022 Pawel Piasek  <pp@euro-linux.com> - 9.0-0.3
+- For GA release
+
 * Sun Feb 27 2022 Alex Baranowski <alex@euro-linux.com>  - 9.0-0.2
 - Now el-release uses proper beta repos.
 
