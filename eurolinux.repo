@@ -7,7 +7,7 @@
 # Certify in the URL might be confusing - it is legacy name when we open
 # repositories for certification purposes.
 
-[certify-baseos-beta]
+[baseos]
 name = EuroLinux Beta BaseOS
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-BaseOS/os
 enabled=1
@@ -15,7 +15,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-appstream-beta]
+[appstream]
 name = EuroLinux Beta AppStream
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-AppStream/os
 enabled=1
@@ -23,7 +23,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-powertools-beta]
+[powertools]
 name = EuroLinux Beta PowerTools
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-PowerTools/os
 enabled=1
@@ -31,21 +31,21 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[high-availability-beta]
+[high-availability]
 name = EuroLinux Beta Availability
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
-[resilient-storage-beta]
+[resilient-storage]
 name = EuroLinux Beta Resilient Storage
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
-[certify-baseos-beta-all]
+[baseos-all]
 name = EuroLinux certify BaseOS ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-BaseOS/all
 enabled=0
@@ -53,7 +53,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-appstream-beta-all]
+[appstream-all]
 name = EuroLinux certify AppStream ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-AppStream/all
 enabled=0
@@ -61,7 +61,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[certify-powertools-beta-all]
+[powertools-all]
 name = EuroLinux certify PowerTools ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-PowerTools/all
 enabled=0
@@ -69,7 +69,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[high-availability-beta-all]
+[high-availability-all]
 name = EuroLinux High Availability ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/all
 enabled=0
@@ -77,7 +77,7 @@ gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[resilient-storage-beta-all]
+[resilient-storage-all]
 name = EuroLinux Resilient Storage ALL REPO (NOT SUPPORTED)
 baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/all
 enabled=0
