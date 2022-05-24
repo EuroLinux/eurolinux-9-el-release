@@ -215,4 +215,5 @@ enable redboot-auto-reboot.service
 enable redboot-task-runner.service
 
 # https://bugzilla.redhat.com/show_bug.cgi?id=2013299
+enable switcheroo-control.service
 enable low-memory-monitor.service
