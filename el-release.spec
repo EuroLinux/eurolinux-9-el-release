@@ -180,13 +180,13 @@ rm -f el-release.conf
 # use unbranded datadir
 mkdir -p -m 755 %{buildroot}/%{_datadir}/el-release
 ln -s el-release %{buildroot}/%{_datadir}/redhat-release
-install -m 644 EULA %{buildroot}/%{_datadir}/redhat-release
+install -m 644 %{SOURCE201}  %{buildroot}/%{_datadir}/redhat-release
 
 # Create doc dir
 mkdir -p -m 755 %{buildroot}/%{_docdir}/el-release
 # make /usr/share/el-release symlink redhat-release
 ln -s el-release %{buildroot}/%{_docdir}/redhat-release
-install -m 644 GPL %{buildroot}/%{_docdir}/el-release
+install -m 644  %{SOURCE200}  %{buildroot}/%{_docdir}/el-release
 
 
 # copy systemd presets
@@ -296,7 +296,7 @@ rm -rf %{buildroot}
 %{_prefix}/lib/sysctl.d/50-redhat.conf
 %{_prefix}/lib/os-release
 
-%dir /etc/yum.repos.d
+/etc/yum.repos.d
 %config(noreplace) /etc/dnf/vars/*
 # FIXME waiting for swid tag
 #/etc/swid/swidtags.d
