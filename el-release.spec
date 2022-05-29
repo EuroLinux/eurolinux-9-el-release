@@ -13,7 +13,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.3%{?dist}
+Release:        0.5%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -320,6 +320,12 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Sun May 29 2022 Alex Baranowski <ab@euro-linux.com> - 9.0-0.5
+- Change PowerTools to CBR
+
+* Sun May 29 2022 Alex Baranowski <ab@euro-linux.com> - 9.0-0.4
+- Update release
+
 * Tue May 24 2022 Pawel Piasek  <pp@euro-linux.com> - 9.0-0.3
 - For GA release
 

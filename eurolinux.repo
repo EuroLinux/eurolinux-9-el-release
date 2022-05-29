@@ -4,66 +4,63 @@
 # sources (including creating a custom fork), contact the EuroLinux sales team
 # or partner.
 
-# Certify in the URL might be confusing - it is legacy name when we open
-# repositories for certification purposes.
-
 [baseos]
-name = EuroLinux Beta BaseOS
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-BaseOS/os
+name = EuroLinux BaseOS
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/BaseOS/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
 [appstream]
-name = EuroLinux Beta AppStream
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-AppStream/os
+name = EuroLinux AppStream
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/AppStream/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
-[powertools]
-name = EuroLinux Beta PowerTools
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-beta-PowerTools/os
+[crb]
+name = EuroLinux CRB
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/CRB/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
 [high-availability]
-name = EuroLinux Beta Availability
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/os
+name = EuroLinux High Availability
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/HighAvailability/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
 [resilient-storage]
-name = EuroLinux Beta Resilient Storage
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/os
+name = EuroLinux Resilient Storage
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/ResilientStorage/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
 [baseos-all]
-name = EuroLinux certify BaseOS ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-BaseOS/all
+name = EuroLinux BaseOS ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/BaseOS/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
 [appstream-all]
-name = EuroLinux certify AppStream ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-AppStream/all
+name = EuroLinux AppStream ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/AppStream/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 skip_if_unavailable=1
 
 [powertools-all]
-name = EuroLinux certify PowerTools ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-PowerTools/all
+name = EuroLinux PowerTools ALL REPO (NOT SUPPORTED)
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/PowerTools/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -71,7 +68,7 @@ skip_if_unavailable=1
 
 [high-availability-all]
 name = EuroLinux High Availability ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-HighAvailability/all
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/HighAvailability/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -79,7 +76,7 @@ skip_if_unavailable=1
 
 [resilient-storage-all]
 name = EuroLinux Resilient Storage ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/certify-ResilientStorage/all
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/ResilientStorage/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
