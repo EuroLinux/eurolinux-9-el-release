@@ -5,15 +5,13 @@
 %define full_release_version 9.0
 %define dist_release_version 9
 
-%define beta Beta
-%define beta_part %{?beta:-%{beta}}
 # We need to create one
 #%define swid_regid euro-linux.com
 %define dist .el%{dist_release_version}
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.5%{?dist}
+Release:        0.6%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -112,7 +110,7 @@ mkdir -p %{buildroot}/etc
 mkdir -p %{buildroot}/%{_prefix}/lib
 
 # create /etc/system-release and /etc/el-release 
-echo "%{product_family} release %{full_release_version}%{?beta: %{beta}} (%{release_name})" > %{buildroot}/etc/el-release
+echo "%{product_family} release %{full_release_version} (%{release_name})" > %{buildroot}/etc/el-release
 ln -s el-release %{buildroot}/etc/system-release
 ln -s el-release %{buildroot}/etc/redhat-release
 
@@ -124,7 +122,7 @@ ID="eurolinux"
 ID_LIKE="rhel fedora centos"
 VERSION_ID="%{full_release_version}"
 PLATFORM_ID="platform:el%{base_release_version}"
-PRETTY_NAME="%{product_family} %{full_release_version}%{?beta: %{beta}} (%{release_name})"
+PRETTY_NAME="%{product_family} %{full_release_version} (%{release_name})"
 ANSI_COLOR="0;34"
 LOGO="fedora-logo-icon"
 CPE_NAME="cpe:/o:eurolinux:eurolinux:%{base_release_version}"
@@ -320,6 +318,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Jun 07 2022 Alex Baranowski <ab@euro-linux.com> - 9.0-0.6
+- Remove beta macro so it's impossible to build package wrongly
+
 * Sun May 29 2022 Alex Baranowski <ab@euro-linux.com> - 9.0-0.5
 - Change PowerTools to CBR
 
