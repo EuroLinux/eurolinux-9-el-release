@@ -11,7 +11,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.6%{?dist}
+Release:        0.7%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -53,6 +53,9 @@ Provides:       system-release = %{base_release_version}
 Provides:       system-release = %{version}
 Provides:       system-release = %{version}-%{release}
 Provides:       system-release(releasever) = %{base_release_version}
+# obsolete rhc and insights-client
+Obsoletes:      rhc
+Obsoletes:      insights-client
 
 # Comment this because it does not make any sense
 # Recommends:     redhat-release-eula
@@ -318,6 +321,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Jun 28 2022 Paweł Piasek <pp@euro-linux.com> - 9.0-0.7
+- Obsoletes rhc and inights-client packages.
+
 * Tue Jun 07 2022 Alex Baranowski <ab@euro-linux.com> - 9.0-0.6
 - Remove beta macro so it's impossible to build package wrongly
 
