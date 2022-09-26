@@ -11,7 +11,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.7%{?dist}
+Release:        0.8%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -132,7 +132,6 @@ CPE_NAME="cpe:/o:eurolinux:eurolinux:%{base_release_version}"
 HOME_URL="https://www.euro-linux.com/"
 DOCUMENTATION_URL="https://docs.euro-linux.com"
 BUG_REPORT_URL="https://github.com/EuroLinux/eurolinux-distro-bugs-and-rfc/"
-# We keep it for build scripts only
 REDHAT_SUPPORT_PRODUCT="EuroLinux"
 REDHAT_SUPPORT_PRODUCT_VERSION="%{base_release_version}"
 EOF
@@ -321,6 +320,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Mon Sep 26 2022 Alex Baranowski <ab@euro-linux.com> - 9.0-0.8
+- Remove comment from /etc/os-release as not all parsers support it correctly
+
 * Tue Jun 28 2022 Paweł Piasek <pp@euro-linux.com> - 9.0-0.7
 - Obsoletes rhc and inights-client packages.
 
