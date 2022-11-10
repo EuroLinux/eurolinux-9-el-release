@@ -5,20 +5,13 @@
 %define full_release_version 9.1
 %define dist_release_version 9
 
-# When moving from Beta to GA, the beta definition needs to be removed,
-# not just commented out.
-# Also ensure that the appropriate SWID and productids tarball have been
-# uploaded to the lookaside cache.
-%define beta Beta
-%define beta_part %{?beta:-%{beta}}
-
 # We need to create one
 #%define swid_regid euro-linux.com
 %define dist .el%{dist_release_version}
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        1.0%{?dist}
+Release:        1.1%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -327,6 +320,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Thu Nov 10 2022 Paweł Piasek <pp@euro-linux.com> - 9.1-1.1
+- remove beta tags from repos. Prepare for GA version.
+
 * Tue Oct 18 2022 Paweł Piasek <pp@euro-linux.com> - 9.1-1.0
 - Initial release for EuroLinux 9.1 beta
 - Based on redhat-release-9.1-1.8 

@@ -6,7 +6,7 @@
 
 [baseos]
 name = EuroLinux BaseOS
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/BaseOS/os
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/BaseOS/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -14,7 +14,7 @@ skip_if_unavailable=1
 
 [appstream]
 name = EuroLinux AppStream
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/AppStream/os
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/AppStream/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -22,7 +22,7 @@ skip_if_unavailable=1
 
 [crb]
 name = EuroLinux CRB
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/CRB/os
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/CRB/os
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -30,21 +30,21 @@ skip_if_unavailable=1
 
 [high-availability]
 name = EuroLinux High Availability
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/HighAvailability/os
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/HighAvailability/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
 [resilient-storage]
 name = EuroLinux Resilient Storage
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/ResilientStorage/os
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/ResilientStorage/os
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
 
 [baseos-all]
 name = EuroLinux BaseOS ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/BaseOS/all
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/BaseOS/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -52,7 +52,7 @@ skip_if_unavailable=1
 
 [appstream-all]
 name = EuroLinux AppStream ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/AppStream/all
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/AppStream/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -60,7 +60,7 @@ skip_if_unavailable=1
 
 [powertools-all]
 name = EuroLinux PowerTools ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/PowerTools/all
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/PowerTools/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -68,7 +68,7 @@ skip_if_unavailable=1
 
 [high-availability-all]
 name = EuroLinux High Availability ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/HighAvailability/all
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/HighAvailability/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -76,7 +76,7 @@ skip_if_unavailable=1
 
 [resilient-storage-all]
 name = EuroLinux Resilient Storage ALL REPO (NOT SUPPORTED)
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9-beta/$basearch/ResilientStorage/all
+baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/ResilientStorage/all
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
