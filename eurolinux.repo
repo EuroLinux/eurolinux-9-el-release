@@ -6,7 +6,8 @@
 
 [baseos]
 name = EuroLinux BaseOS
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/BaseOS/os
+# baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/BaseOS/os
+mirrorlist=https://mirrors.cdn.euro-linux.com/mirrorlist/9/baseos
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -14,7 +15,8 @@ skip_if_unavailable=1
 
 [appstream]
 name = EuroLinux AppStream
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/AppStream/os
+# baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/AppStream/os
+mirrorlist=https://mirrors.cdn.euro-linux.com/mirrorlist/9/appstream
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -22,7 +24,8 @@ skip_if_unavailable=1
 
 [crb]
 name = EuroLinux CRB
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/CRB/os
+# baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/CRB/os
+mirrorlist=https://mirrors.cdn.euro-linux.com/mirrorlist/9/crb
 enabled=1
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
@@ -30,7 +33,8 @@ skip_if_unavailable=1
 
 [high-availability]
 name = EuroLinux High Availability
-baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/HighAvailability/os
+# baseurl=https://fbi.cdn.euro-linux.com/dist/eurolinux/server/9/$basearch/HighAvailability/os
+mirrorlist=https://mirrors.cdn.euro-linux.com/mirrorlist/9/ha
 enabled=0
 gpgcheck=1
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-eurolinux9
