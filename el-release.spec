@@ -11,7 +11,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        1.1%{?dist}
+Release:        2.0%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -100,10 +100,7 @@ Source201:      GPL
 
 %prep
 
-
 %build
-echo OK
-
 
 %install
 rm -rf %{buildroot}
@@ -148,6 +145,7 @@ cp %{buildroot}/etc/issue %{buildroot}/etc/issue.net
 echo >> %{buildroot}/etc/issue
 mkdir -p %{buildroot}%{_sysconfdir}/issue.d
 
+# copy GPG keys
 mkdir -p -m 755 %{buildroot}/etc/pki/rpm-gpg
 install -m 644 %{SOURCE50} %{buildroot}/etc/pki/rpm-gpg
 
@@ -203,6 +201,7 @@ install -m 0644 %{SOURCE3} %{buildroot}%{_prefix}/lib/systemd/user-preset/
 mkdir -p %{buildroot}/%{_prefix}/lib/sysctl.d/
 install -m 0644 %{SOURCE6} %{buildroot}/%{_prefix}/lib/sysctl.d/
 
+# Make dir for yum/dnf repos/vars
 mkdir -p -m 755 %{buildroot}/etc/yum.repos.d
 mkdir -p -m 755 %{buildroot}/etc/dnf/vars
 echo %{base_release_version} > %{buildroot}/etc/dnf/vars/releasever
@@ -320,6 +319,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Nov 23 2022 Paweł Piasek <pp@euro-linux.com> - 9.1-2.0
+- Setup links to mirrorlist in eurolinux.repo
+
 * Thu Nov 10 2022 Paweł Piasek <pp@euro-linux.com> - 9.1-1.1
 - remove beta tags from repos. Prepare for GA version.
 
