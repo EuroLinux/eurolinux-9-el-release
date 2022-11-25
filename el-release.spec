@@ -77,25 +77,23 @@ Source70:       eurolinux.repo
 Source200:      EULA
 Source201:      GPL
 
-# Change this after obtaining SB certificates from the rh-boot team Secure Boot
-# Signing Certificates
-#Source400:      sb-certs-9-2021.9.tar.bz2
+# Signing Certificate
+Source400:      eurolinux.cer
 
 
 %description
 %{product_family} release files
 
-# TODO SB
-#%package -n eurolinux-sb-certs
-#Summary: %{distro} public secureboot certificates
-#Group: System Environment/Base
-#Provides: system-sb-certs = %{version}-%{release}
-#Provides: redhat-sb-certs = %{version}-%{release}
-#BuildArch: noarch
+%package -n eurolinux-sb-certs
+Summary: %{distro} public secureboot certificates
+Group: System Environment/Base
+Provides: system-sb-certs = %{version}-%{release}
+Provides: redhat-sb-certs = %{version}-%{release}
+BuildArch: noarch
 
 
-#%description -n eurolinux-sb-certs
-#Secure Boot certificates
+%description -n eurolinux-sb-certs
+Secure Boot certificates
 
 
 %prep
@@ -223,53 +221,32 @@ install -m 644 %{SOURCE70} %{buildroot}/etc/yum.repos.d
 
 
 # Copy secureboot certificates
-# FIXME after SB
-#install -d -m 0755 %{buildroot}%{_sysconfdir}/pki/sb-certs/
-#install -d -m 0755 %{buildroot}%{_datadir}/pki/sb-certs/
+install -d -m 0755 %{buildroot}%{_sysconfdir}/pki/sb-certs/
+install -d -m 0755 %{buildroot}%{_datadir}/pki/sb-certs/
 
 # Install aarch64 certs
-#install -m 644 sb-certs/redhatsecurebootca5.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-aarch64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-ca-aarch64.cer
-
-#install -m 644 sb-certs/redhatsecureboot501.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-aarch64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-kernel-aarch64.cer
-
-#install -m 644 sb-certs/redhatsecureboot502.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-aarch64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-grub2-aarch64.cer
-
-#install -m 644 sb-certs/redhatsecureboot503.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-fwupd-aarch64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-fwupd-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-fwupd-aarch64.cer
-
-# Install ppc64le certs
-#install -m 644 sb-certs/redhatsecurebootca6.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-ppc64le.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-ppc64le.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-ca-ppc64le.cer
-
-#install -m 644 sb-certs/redhatsecureboot601.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-ppc64le.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-ppc64le.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-kernel-ppc64le.cer
-
-#install -m 644 sb-certs/redhatsecureboot602.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-ppc64le.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-ppc64le.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-grub2-ppc64le.cer
-
-# Install s390x certs
-#install -m 644 sb-certs/redhatsecurebootca3.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-s390x.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-s390x.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-ca-s390x.cer
-
-#install -m 644 sb-certs/redhatsecureboot302.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-s390x.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-s390x.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-kernel-s390x.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-aarch64.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-aarch64.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-aarch64.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-fwupd-aarch64.cer
 
 # Install x86_64 certs
-#install -m 644 sb-certs/redhatsecurebootca5.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-x86_64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-ca-x86_64.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-ca-x86_64.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-x86_64.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-x86_64.cer
+install -m 644 %{SOURCE400} %{buildroot}%{_datadir}/pki/sb-certs/secureboot-fwupd-x86_64.cer
 
-#install -m 644 sb-certs/redhatsecureboot501.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-x86_64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-kernel-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-kernel-x86_64.cer
+# Link x86_64 certs
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-ca-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-ca-x86_64.cer
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-kernel-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-kernel-x86_64.cer
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-grub2-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-grub2-x86_64.cer
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-fwupd-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-fwupd-x86_64.cer
 
-#install -m 644 sb-certs/redhatsecureboot502.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-x86_64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-grub2-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-grub2-x86_64.cer
-
-#install -m 644 sb-certs/redhatsecureboot503.cer %{buildroot}%{_datadir}/pki/sb-certs/secureboot-fwupd-x86_64.cer
-#ln -sr %{buildroot}%{_datadir}/pki/sb-certs/secureboot-fwupd-x86_64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-fwupd-x86_64.cer
-
+# Link aarch64 certs
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-ca-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-ca-aarch64.cer
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-kernel-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-kernel-aarch64.cer
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-grub2-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-grub2-aarch64.cer
+ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-fwupd-aarch64.cer %{buildroot}%{_sysconfdir}/pki/sb-certs/secureboot-fwupd-aarch64.cer
 
 %clean
 rm -rf %{buildroot}
@@ -308,17 +285,20 @@ rm -rf %{buildroot}
 
 
 
-#%files -n redhat-sb-certs
+%files -n eurolinux-sb-certs
 ## Note to future packagers:
 # The symlinks are not %config(noreplace) intentionally. We want them to be
 # restored if this package is updated.
-#%dir %{_sysconfdir}/pki/sb-certs
-#%dir %{_datadir}/pki/sb-certs
-#%{_sysconfdir}/pki/sb-certs/*.cer
-#%{_datadir}/pki/sb-certs/*.cer
+%dir %{_sysconfdir}/pki/sb-certs
+%dir %{_datadir}/pki/sb-certs
+%{_sysconfdir}/pki/sb-certs/*.cer
+%{_datadir}/pki/sb-certs/*.cer
 
 
 %changelog
+* Fri Nov 25 2022 Kamil Aronowski <ka@euro-linux.com> - 9.1-2.0
+- SecureBoot certificates
+
 * Wed Nov 23 2022 Paweł Piasek <pp@euro-linux.com> - 9.1-2.0
 - Setup links to mirrorlist in eurolinux.repo
 
