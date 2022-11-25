@@ -11,7 +11,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        2.0%{?dist}
+Release:        2.1%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -296,7 +296,7 @@ rm -rf %{buildroot}
 
 
 %changelog
-* Fri Nov 25 2022 Kamil Aronowski <ka@euro-linux.com> - 9.1-2.0
+* Fri Nov 25 2022 Kamil Aronowski <ka@euro-linux.com> - 9.1-2.1
 - SecureBoot certificates
 
 * Wed Nov 23 2022 Paweł Piasek <pp@euro-linux.com> - 9.1-2.0
