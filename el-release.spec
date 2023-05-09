@@ -1,8 +1,8 @@
 %define debug_package %{nil}
 %define product_family EuroLinux
-%define release_name Stockholm
+%define release_name Vilnius
 %define base_release_version 9
-%define full_release_version 9.1
+%define full_release_version 9.2
 %define dist_release_version 9
 
 # We need to create one
@@ -11,10 +11,11 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        2.1%{?dist}
+Release:        1.0%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
+BuildArch:      noarch
 
 Obsoletes:      centos-stream-release
 Obsoletes:      centos-stream-release-eula
@@ -296,6 +297,16 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue May 09 2023 <pp@euro-linux.com> - 9.2-1.0
+- prepare for GA release
+
+* Thu May 04 2023 <pp@euro-linux.com> - 9.2-0.2
+- New code name for 9.2beta
+- BuildArch: noarch
+
+* Mon Apr 03 2023 Paweł Piasek <pp@euro-linux.com> - 9.2-0.1
+- 9.2 Beta release
+
 * Fri Nov 25 2022 Kamil Aronowski <ka@euro-linux.com> - 9.1-2.1
 - SecureBoot certificates
 
