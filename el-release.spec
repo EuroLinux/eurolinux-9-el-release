@@ -1,8 +1,8 @@
 %define debug_package %{nil}
 %define product_family EuroLinux
-%define release_name Vilnius
+%define release_name Riga
 %define base_release_version 9
-%define full_release_version 9.2
+%define full_release_version 9.3
 %define dist_release_version 9
 
 # We need to create one
@@ -11,7 +11,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        1.0%{?dist}
+Release:        0.0%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -297,6 +297,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Sat Sep 30 2023 Paweł Piasek <pp@euro-linux.com> - 9.3-0.0
+- prepare for 9.3beta
+
 * Tue May 09 2023 <pp@euro-linux.com> - 9.2-1.0
 - prepare for GA release
 
