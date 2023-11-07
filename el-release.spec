@@ -11,7 +11,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        0.0%{?dist}
+Release:        1.0%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -297,6 +297,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue Nov 07 2023 Paweł Piasek <pp@euro-linux.com> - 9.3-1.0
+- 9.3 GA release
+
 * Sat Sep 30 2023 Paweł Piasek <pp@euro-linux.com> - 9.3-0.0
 - prepare for 9.3beta
 
