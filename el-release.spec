@@ -11,7 +11,7 @@
 
 Name:           el-release
 Version:        %{full_release_version}
-Release:        2.0%{?dist}
+Release:        3.0%{?dist}
 Summary:        %{product_family} release file
 Group:          System Environment/Base
 License:        GPLv2
@@ -108,7 +108,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/etc
 mkdir -p %{buildroot}/%{_prefix}/lib
 
-# create /etc/system-release and /etc/el-release 
+# create /etc/system-release and /etc/el-release
 echo "%{product_family} release %{full_release_version} (%{release_name})" > %{buildroot}/etc/el-release
 ln -s el-release %{buildroot}/etc/system-release
 ln -s el-release %{buildroot}/etc/redhat-release
@@ -208,7 +208,7 @@ echo %{base_release_version} > %{buildroot}/etc/dnf/vars/releasever
 # Copy eurolinux.repo
 install -m 644 %{SOURCE70} %{buildroot}/etc/yum.repos.d
 
-# Copy SWID tags 
+# Copy SWID tags
 # FIXME after SWID tags
 #mkdir -p -m 755 %{buildroot}%{_prefix}/lib/swidtag/%{swid_regid}
 #if ! [ %{_arch} = "i386" ] ; then
@@ -252,6 +252,54 @@ ln -sr %{buildroot}%{_datadir}%{_datadir}/pki/sb-certs/secureboot-fwupd-aarch64.
 %clean
 rm -rf %{buildroot}
 
+%post
+# File to be edited
+file="/etc/motd"
+
+# Define the multi-line string to be appended or checked
+# Note: The leading newline ensures the text starts on a new line when appended
+text='
+!!!
+Last packages for EuroLinux distribution were released on 23rd October 2024.
+The EuroLinux team advises and supports migration to Rocky Linux using the instructions linked below:
+https://docs.euro-linux.com/HowTo/migrate_to_rocky_linux/
+
+For technical support services check:
+https://euro-linux.com/en/software/technical-support/
+'
+
+# Escape special characters and newlines in the text for use in sed
+# This allows sed to correctly match the text in the file
+text_escaped=$(echo "$text" | sed -n '
+    H                   # Append each line to the hold space
+    1h                  # On first line, copy to hold space instead of appending to wipe out the initial \n in hold space
+    ${                  # On last line...
+      g                 # Get the entire text from hold space
+      s/[\/&\.]/\\&/g     # Escape forward slashes, ampersands, dots
+      s/\n/\\n/g        # Replace newlines with \n
+      p                 # Print the escaped text
+    }
+  '
+)
+
+# Check if file is empty OR if it doesn't contain the text, then append
+if [ ! -s "$file" ] || sed -ni '
+  H                     # Append each line to the hold space
+  1h                    # On first line, copy to hold space instead of appending to wipe out the initial \n in hold space
+  ${                    # On last line...
+    g                   # Get the entire file content from hold space
+    s/'"$text_escaped"'/&/  # Try to substitute the escaped text with same text (it might be another text in the future)
+    p                   # Print the result (for debugging, can be removed)
+    Ta                  # If substitution failed (text not found), branch to label a (like append)
+    q1                  # If text was found, exit sed with status 1
+    :a                  # Label for branch
+    q                   # Exit sed with status 0 if text was not found
+  }
+' $file
+then
+  # Append the text to the file if it's empty or doesn't contain the text
+  echo "$text" >> "$file"
+fi
 
 %files
 %defattr(0644,root,root,0755)
@@ -297,6 +345,9 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Wed Oct 23 2024 Paweł Piasek <pp@euro-linux.com> - 9.4-3.0
+- Add note about EuroLinux EOL to motd
+
 * Tue May 07 2024 Alex Baranowski <ab@euro-linux.com> - 9.4-2.0
 - 9.4 GA release (San Marino)
 
@@ -327,7 +378,7 @@ rm -rf %{buildroot}
 
 * Tue Oct 18 2022 Paweł Piasek <pp@euro-linux.com> - 9.1-1.0
 - Initial release for EuroLinux 9.1 beta
-- Based on redhat-release-9.1-1.8 
+- Based on redhat-release-9.1-1.8
 
 * Mon Sep 26 2022 Alex Baranowski <ab@euro-linux.com> - 9.0-0.8
 - Remove comment from /etc/os-release as not all parsers support it correctly
